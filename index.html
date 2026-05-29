@@ -515,6 +515,126 @@ color:#555;
 line-height:1.7;
 }
 
+ /* MINHA JORNADA */
+
+.journey-section{
+background:#f5f7fa;
+padding:90px 8%;
+}
+
+.journey-subtitle{
+max-width:760px;
+margin:-30px auto 50px;
+text-align:center;
+color:#555;
+font-size:17px;
+line-height:1.7;
+}
+
+.journey-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:24px;
+margin-bottom:55px;
+}
+
+.journey-card{
+position:relative;
+background:white;
+border-radius:24px;
+padding:30px 24px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+overflow:hidden;
+transition:0.4s;
+}
+
+.journey-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+.journey-icon{
+position:absolute;
+top:18px;
+right:22px;
+font-size:52px;
+opacity:0.13;
+filter:grayscale(20%);
+}
+
+.journey-card h3{
+font-size:18px;
+color:#0b2b3c;
+margin-bottom:18px;
+max-width:160px;
+}
+
+.journey-card strong{
+display:block;
+font-size:42px;
+color:#4cc9f0;
+margin-bottom:8px;
+}
+
+.journey-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+.journey-experiences{
+background:#071d2a;
+border-radius:30px;
+padding:40px;
+box-shadow:0 20px 45px rgba(0,0,0,0.18);
+}
+
+.journey-experiences h3{
+color:white;
+font-size:28px;
+margin-bottom:28px;
+text-align:center;
+}
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:22px;
+}
+
+.experience-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:22px;
+padding:26px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.experience-card:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.12);
+}
+
+.experience-card h4{
+color:white;
+font-size:18px;
+margin-bottom:12px;
+}
+
+.experience-card p{
+color:rgba(255,255,255,0.78);
+font-size:14px;
+line-height:1.7;
+}
+
+.empty-state{
+min-height:170px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+} 
+  
 /* FILTRO */
 
 .filter-section{
@@ -651,6 +771,28 @@ font-size:24px;
 font-size:24px;
 }
 
+.journey-section{
+padding:70px 6%;
+}
+
+.journey-subtitle{
+font-size:15px;
+margin:-25px auto 35px;
+}
+
+.journey-experiences{
+padding:28px;
+border-radius:24px;
+}
+
+.journey-card{
+padding:26px 22px;
+}
+
+.journey-icon{
+font-size:46px;
+}
+  
 }
 
 </style>
@@ -955,6 +1097,84 @@ Destinos em destaque
 
 </section>
 
+<!-- MINHA JORNADA -->
+
+<section class="journey-section" id="minha-jornada">
+
+<h2 class="section-title">
+Minha Jornada
+</h2>
+
+<p class="journey-subtitle">
+Acompanhe suas pesquisas, destinos salvos, viagens realizadas e experiências compartilhadas.
+</p>
+
+<div class="journey-grid">
+
+<div class="journey-card">
+<div class="journey-icon">🔎</div>
+<h3>Histórico de pesquisas</h3>
+<strong id="searchCount">0</strong>
+<p>Destinos pesquisados recentemente.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">💙</div>
+<h3>Destinos salvos</h3>
+<strong id="savedCount">0</strong>
+<p>Lugares que você deseja conhecer.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">✈️</div>
+<h3>Viagens realizadas</h3>
+<strong id="visitedCount">0</strong>
+<p>Destinos que você já visitou.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">🧳</div>
+<h3>Viagens planejadas</h3>
+<strong id="plannedCount">0</strong>
+<p>Próximos destinos da sua lista.</p>
+</div>
+
+<div class="journey-card">
+<div class="journey-icon">✍️</div>
+<h3>Publicações no Blog</h3>
+<strong id="blogCount">0</strong>
+<p>Experiências compartilhadas com outros viajantes.</p>
+</div>
+
+</div>
+
+<div class="journey-experiences">
+
+<h3>Últimas experiências</h3>
+
+<div class="experience-grid">
+
+<div class="experience-card empty-state">
+<h4>Nenhuma experiência registrada ainda</h4>
+<p>Salve destinos, marque viagens realizadas e compartilhe suas experiências no Blog.</p>
+</div>
+
+<div class="experience-card empty-state">
+<h4>Comece sua jornada</h4>
+<p>Explore os destinos em destaque e crie seu primeiro registro de viagem.</p>
+</div>
+
+<div class="experience-card empty-state">
+<h4>Suas memórias aparecerão aqui</h4>
+<p>Em breve, esta área exibirá suas viagens, fotos, dicas e relatos.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
 <!-- FILTRO -->
 
 <section class="filter-section">
