@@ -1757,7 +1757,17 @@ checkLoggedUser();
 
 const coverflowCards = Array.from(document.querySelectorAll(".coverflow-card"));
 const coverflowDotsContainer = document.getElementById("coverflowDots");
+  
+<div class="coverflow-card" onclick="openDestination('maldivas')">
+    <span class="coverflow-tag">Praia</span>
 
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600">
+
+    <div class="coverflow-content">
+        <h3>Maldivas</h3>
+        <p>Praias paradisíacas e resorts luxuosos.</p>
+    </div>
+</div>
 let currentCoverflow = 0;
 let coverflowInterval;
 
