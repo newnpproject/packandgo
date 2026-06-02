@@ -357,22 +357,42 @@ background-position:center;
 max-width:950px;
 color:white;
 animation:fadeUp 1s ease;
+transform:translateY(-25px);
+}
+.hero-phrase-wrapper{
+position:relative;
+height:70px;
+margin-bottom:26px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
 }
 
-.hero-badge{
-display:inline-block;
-padding:10px 22px;
+.hero-phrase{
+position:absolute;
+padding:12px 26px;
 border-radius:50px;
-
 background:rgba(255,255,255,0.12);
-
 backdrop-filter:blur(10px);
-
 border:1px solid rgba(255,255,255,0.12);
+color:white;
+font-size:16px;
+font-style:italic;
+opacity:0;
+transform:translateY(45px) scale(0.92);
+transition:opacity 0.8s ease, transform 0.8s ease;
+white-space:nowrap;
+}
 
-margin-bottom:25px;
+.hero-phrase.active{
+opacity:1;
+transform:translateY(0) scale(1);
+}
 
-font-size:14px;
+.hero-phrase.exit{
+opacity:0;
+transform:translateY(-45px) scale(0.92);
 }
 
 .hero h1{
@@ -402,18 +422,6 @@ font-size:19px;
 opacity:0.92;
 margin-bottom:35px;
 line-height:1.8;
-}
-
-.quotes{
-display:flex;
-flex-direction:column;
-gap:10px;
-margin-bottom:30px;
-}
-
-.quotes p{
-font-style:italic;
-opacity:0.85;
 }
 
 .buttons{
@@ -927,6 +935,22 @@ transform:translate(calc(-50% + 340px), -50%) rotateY(-48deg) scale(0.68);
 
 @media(max-width:768px){
 
+  .hero-content{
+transform:translateY(-10px);
+}
+
+.hero-phrase-wrapper{
+height:85px;
+margin-bottom:22px;
+}
+
+.hero-phrase{
+font-size:14px;
+white-space:normal;
+text-align:center;
+max-width:90%;
+line-height:1.5;
+}
 .hero h1{
 font-size:44px;
 }
@@ -1221,14 +1245,24 @@ Cadastrar
 
 <div class="hero-content">
 
-<div class="hero-badge">
+<div class="hero-phrase-wrapper">
+
+<div class="hero-phrase active">
 ✈️ Plataforma premium de viagens
 </div>
 
-<div class="quotes">
-<p>🌍 O mundo é grande demais para ficar no mesmo lugar.</p>
-<p>💙 Viajar é mudar a roupa da alma.</p>
-<p>✨ Colecione momentos, não coisas.</p>
+<div class="hero-phrase">
+🌍 O mundo é grande demais para ficar no mesmo lugar.
+</div>
+
+<div class="hero-phrase">
+💙 Viajar é mudar a roupa da alma.
+</div>
+
+<div class="hero-phrase">
+✨ Colecione momentos, não coisas.
+</div>
+
 </div>
 
 <h1>
@@ -1671,6 +1705,42 @@ document.getElementById("userName").innerHTML =
 }
 
 checkLoggedUser();
+
+/* HERO FRASES ANIMADAS */
+
+const heroPhrases = document.querySelectorAll(".hero-phrase");
+
+let currentHeroPhrase = 0;
+
+function rotateHeroPhrases(){
+
+if(heroPhrases.length === 0){
+return;
+}
+
+heroPhrases[currentHeroPhrase].classList.remove("active");
+heroPhrases[currentHeroPhrase].classList.add("exit");
+
+currentHeroPhrase++;
+
+if(currentHeroPhrase >= heroPhrases.length){
+currentHeroPhrase = 0;
+}
+
+setTimeout(() => {
+
+heroPhrases.forEach((phrase) => {
+phrase.classList.remove("exit");
+});
+
+heroPhrases[currentHeroPhrase].classList.add("active");
+
+}, 350);
+
+}
+
+setInterval(rotateHeroPhrases, 3200);
+
 
 function openDestination(destination){
 
