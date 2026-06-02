@@ -1357,7 +1357,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 
 <div class="coverflow-stage" id="coverflowStage">
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('maldivas')">
 <span class="coverflow-tag">Praia</span>
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600" alt="Maldivas">
 <div class="coverflow-content">
@@ -1366,7 +1366,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 </div>
 </div>
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('paris')">
 <span class="coverflow-tag">Cultural</span>
 <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1600" alt="Paris">
 <div class="coverflow-content">
@@ -1375,7 +1375,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 </div>
 </div>
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('noronha')">
 <span class="coverflow-tag">Natureza</span>
 <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600" alt="Fernando de Noronha">
 <div class="coverflow-content">
@@ -1384,7 +1384,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 </div>
 </div>
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('dubai')">
 <span class="coverflow-tag">Luxo</span>
 <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600" alt="Dubai">
 <div class="coverflow-content">
@@ -1393,7 +1393,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 </div>
 </div>
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('toquio')">
 <span class="coverflow-tag">Urbano</span>
 <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1600" alt="Tóquio">
 <div class="coverflow-content">
@@ -1402,7 +1402,7 @@ Explore destinos incríveis em uma experiência visual dinâmica.
 </div>
 </div>
 
-<div class="coverflow-card">
+<div class="coverflow-card" onclick="openDestination('suica')">
 <span class="coverflow-tag">Montanhas</span>
 <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=1600" alt="Suíça">
 <div class="coverflow-content">
@@ -1753,6 +1753,27 @@ document.getElementById("userName").innerHTML =
 
 checkLoggedUser();
 
+function openDestination(destination){
+
+const destinationNames = {
+maldivas: "Maldivas",
+paris: "Paris",
+noronha: "Fernando de Noronha",
+dubai: "Dubai",
+toquio: "Tóquio",
+suica: "Suíça"
+};
+
+const selectedDestination = destinationNames[destination];
+
+if(selectedDestination){
+alert("Página de " + selectedDestination + " será desenvolvida em breve.");
+}else{
+alert("Destino ainda não disponível.");
+}
+
+}
+  
 /* COVERFLOW DESTINOS */
 
 const coverflowCards = Array.from(document.querySelectorAll(".coverflow-card"));
